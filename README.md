@@ -1,4 +1,4 @@
-**Temperature Converter - Simple Calculator**
+**Temperature Converter**
 
 This is a simple temperature converter web application built using HTML and CSS. It allows users to convert temperatures between Celsius and Fahrenheit. The user can enter a temperature in either Celsius or Fahrenheit, and the application will display the converted value instantly.
 
