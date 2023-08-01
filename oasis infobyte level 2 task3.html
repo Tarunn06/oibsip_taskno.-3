@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c5f3c5; /* Light green background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f0f8ff; /* Light blue container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #0077cc; /* Sky blue header */
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 10px;
+            border: 1px solid #0077cc; /* Sky blue border for input */
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #0077cc; /* Sky blue buttons */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px #005ea3; /* 3D effect */
+        }
+
+        .btn:hover {
+            background-color: #005ea3; /* Darker shade on hover */
+        }
+
+        .result {
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="input-group">
+            <input type="number" id="celsius" placeholder="Enter Celsius">
+            <span>&#8451;</span>
+        </div>
+        <div class="input-group">
+            <input type="number" id="fahrenheit" placeholder="Enter Fahrenheit">
+            <span>&#8457;</span>
+        </div>
+        <button class="btn" onclick="convertToCelsius()">Convert to Celsius</button>
+        <button class="btn" onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+        function convertToCelsius() {
+            const fahrenheitInput = document.getElementById("fahrenheit");
+            const celsiusResult = document.getElementById("result");
+            const fahrenheit = parseFloat(fahrenheitInput.value);
+            const celsius = (fahrenheit - 32) * (5 / 9);
+            celsiusResult.textContent = `${fahrenheit}  is ${celsius.toFixed(2)} `;
+        }
+
+        function convertToFahrenheit() {
+            const celsiusInput = document.getElementById("celsius");
+            const fahrenheitResult = document.getElementById("result");
+            const celsius = parseFloat(celsiusInput.value);
+            const fahrenheit = (celsius * 9 / 5) + 32;
+            fahrenheitResult.textContent = `${celsius}  is ${fahrenheit.toFixed(2)} `;
+        }
+    </script>
+</body>
+</html>
